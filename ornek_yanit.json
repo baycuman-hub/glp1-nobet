@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "message": "OK",
+  "messageTR": "Başarılı",
+  "systemTime": 1705820400,
+  "endpoint": "pharmacies-on-duty/all",
+  "rowCount": 4,
+  "creditUsed": 81,
+  "data": [
+    {"pharmacyID": 25688, "pharmacyName": "Akyurt Merkez Eczanesi", "address": "Beyazıt Mahallesi, Sevda Caddesi No:6/D Akyurt/ Ankara", "city": "Ankara", "district": "Akyurt", "town": null, "directions": "Akyurt 1 Nolu Aile Sağlığı Merkezi karşısı", "phone": "0 (312) 512-26-12", "phone2": null, "pharmacyDutyStart": "2024-01-21 09:30:00", "pharmacyDutyEnd": "2024-01-22 08:30:00", "latitude": 40.131053, "longitude": 33.080705},
+    {"pharmacyID": 15, "pharmacyName": "Hürriyet Eczanesi", "address": "Hürriyet Sağlık Ocağı karşısı Ceyhan / Adana", "city": "Adana", "district": "Ceyhan", "town": "", "directions": "", "phone": "0(322)613-18-01", "phone2": "", "pharmacyDutyStart": "2024-01-21 08:00:00", "pharmacyDutyEnd": "2024-01-22 08:00:00", "latitude": 37.035023, "longitude": 35.821181},
+    {"pharmacyID": 999, "pharmacyName": "Örnek Eczanesi", "address": null, "city": "Şanlıurfa", "district": "Haliliye", "town": "", "directions": "", "phone": "dahili 12", "phone2": "", "pharmacyDutyStart": "2024-01-21 09:00:00", "pharmacyDutyEnd": "2024-01-22 09:00:00", "latitude": null, "longitude": null},
+    {"pharmacyID": 1000, "pharmacyName": "Lefkoşa Eczanesi", "address": "Lefkoşa", "city": "Lefkoşa", "district": "Merkez", "town": "", "directions": "", "phone": "0 (392) 000 00 00", "phone2": "", "pharmacyDutyStart": "2024-01-21 09:00:00", "pharmacyDutyEnd": "2024-01-22 09:00:00", "latitude": 35.19, "longitude": 33.36}
+  ]
+}
