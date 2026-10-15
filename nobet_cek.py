@@ -99,12 +99,42 @@ def telefon(s):
     return None
 
 
+ZAMAN_BICIMLERI = ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M", "%d.%m.%Y %H:%M:%S", "%d.%m.%Y %H:%M")
+
+
 def zaman(s):
-    """'2024-01-21 09:30:00' -> '2024-01-21T09:30:00+03:00'."""
+    """'2024-01-21 09:30:00' -> '2024-01-21T09:30:00+03:00'. Tanınmazsa None.
+
+    Belgedeki biçim ilk satırdaki; ilk gerçek çekimde (15 Ekim 2026) saatlerin hiçbiri bu biçimde
+    gelmediği için ISO 8601 (saat dilimli ya da 'Z') ve Unix zaman damgası da kabul edilir."""
+    if isinstance(s, (int, float)) and not isinstance(s, bool):
+        return dt.datetime.fromtimestamp(s, TZ).isoformat()
+    if not isinstance(s, str) or not s.strip():
+        return None
+    s = s.strip()
+    for bicim in ZAMAN_BICIMLERI:
+        try:
+            return dt.datetime.strptime(s, bicim).replace(tzinfo=TZ).isoformat()
+        except ValueError:
+            pass
     try:
-        return dt.datetime.strptime((s or "").strip(), "%Y-%m-%d %H:%M:%S").replace(tzinfo=TZ).isoformat()
+        t = dt.datetime.fromisoformat(s.replace("Z", "+00:00"))
     except ValueError:
         return None
+    t = t.replace(tzinfo=TZ) if t.tzinfo is None else t.astimezone(TZ)
+    return t.replace(microsecond=0).isoformat()
+
+
+def sekil(kayit, alan):
+    """Tanınmayan değerin biçimini veriyi göstermeden yazar: '15/10/2026 09:00' -> '99/99/9999 99:99'."""
+    if alan not in kayit:
+        return "<alan yok>"
+    d = kayit[alan]
+    if d is None:
+        return "<null>"
+    if not isinstance(d, str):
+        return f"<{type(d).__name__}>"
+    return re.sub(r"\d", "9", d.strip())[:40] or "<boş>"
 
 
 def metin(s):
@@ -219,6 +249,7 @@ def main():
     simdi = dt.datetime.now(TZ).replace(microsecond=0).isoformat()
     iller = {kod: [] for kod in ILLER}
     eslesmeyen = {}
+    taninmayan = {}  # (alan, biçim) -> kayıt sayısı
     for r in kayitlar:
         kod = il_kodu(r.get("city"))
         if not kod:
@@ -226,6 +257,12 @@ def main():
                 eslesmeyen[r.get("city")] = eslesmeyen.get(r.get("city"), 0) + 1
             continue
         tel = telefon(r.get("phone"))
+        saat = {}
+        for alan in ("pharmacyDutyStart", "pharmacyDutyEnd"):
+            saat[alan] = zaman(r.get(alan))
+            if saat[alan] is None:
+                k = (alan, sekil(r, alan))
+                taninmayan[k] = taninmayan.get(k, 0) + 1
         iller[kod].append({
             "kimlik": r.get("pharmacyID"),
             "ad": metin(r.get("pharmacyName")) or "",
@@ -236,8 +273,8 @@ def main():
             "telefon": tel,
             "telefon2": telefon(r.get("phone2")),
             "telefonHam": None if tel else metin(r.get("phone")),
-            "baslangic": zaman(r.get("pharmacyDutyStart")),
-            "bitis": zaman(r.get("pharmacyDutyEnd")),
+            "baslangic": saat["pharmacyDutyStart"],
+            "bitis": saat["pharmacyDutyEnd"],
             "enlem": r.get("latitude"),
             "boylam": r.get("longitude"),
         })
@@ -281,6 +318,10 @@ def main():
         yazilan += 1
     for ad, n in eslesmeyen.items():
         uyarilar.append(f"Eşleşmeyen il adı: {ad!r} ({n} kayıt atlandı)")
+    for (alan, bicim), n in sorted(taninmayan.items(), key=lambda x: -x[1]):
+        uyarilar.append(f"Nöbet saati tanınmadı: {alan}, {n} kayıt, biçim {bicim!r}")
+    if taninmayan:  # tanı için yalnız günlüğe: alan adları veri içermez
+        print("Sağlayıcının alan adları:", ", ".join(sorted(kayitlar[0].keys())))
 
     yaz(durum_yolu, {"surum": SURUM, "guncelleme": simdi, "sonDeneme": simdi, "toplam": toplam,
                      "kaynak": KAYNAK, "iller": il_durum, "uyari": uyarilar})
