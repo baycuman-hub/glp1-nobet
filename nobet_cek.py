@@ -64,7 +64,8 @@ ILLER = {
 # Sağlayıcının farklı yazabileceği il adları.
 TAKMA = {"afyon": "03", "icel": "33", "kmaras": "46", "kahramanmaras": "46", "maras": "46",
          "urfa": "63", "sanliurfa": "63", "antep": "27", "hakkari": "30"}
-KKTC = {"lefkosa", "gazimagusa", "magusa", "girne", "guzelyurt", "iskele", "lefke", "kktc", "kibris"}
+# "kibriskktc": sağlayıcı KKTC kayıtlarını "Kıbrıs KKTC" diye yazıyor (ilk gerçek çekim, 15 Ekim 2026).
+KKTC = {"lefkosa", "gazimagusa", "magusa", "girne", "guzelyurt", "iskele", "lefke", "kktc", "kibris", "kibriskktc"}
 
 
 def anahtar(s):
