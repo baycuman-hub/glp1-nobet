@@ -200,7 +200,7 @@ def main():
         with open(a.girdi, encoding="utf-8") as f:
             yanit = json.load(f)
     else:
-        key = os.environ.get("NOSYAPI_KEY")
+        key = os.environ.get("NOSYAPI_KEY", "").strip()  # yapıştırırken gelen boşluk ve satır sonu atılır
         if not key:
             sys.exit("NOSYAPI_KEY ortam değişkeni tanımlı değil.")
         try:
