@@ -246,7 +246,12 @@ def main():
         sys.exit(f"Sağlayıcı kayıt vermedi: status={yanit.get('status')!r} "
                  f"message={yanit.get('messageTR') or yanit.get('message')!r}")
 
-    simdi = dt.datetime.now(TZ).replace(microsecond=0).isoformat()
+    simdi_t = dt.datetime.now(TZ).replace(microsecond=0)
+    simdi = simdi_t.isoformat()
+    # Sağlayıcı nöbet saatlerini göndermiyor (15 Ekim 2026: /all yanıtında 1298 kaydın hepsinde null).
+    # Liste çekildiği günün nöbetidir; günün ilk güncellemesi 09.00'da geldiği için daha erken çekim dünün
+    # nöbetidir. e-Devlet (İstanbul): gece nöbeti 19.00'da başlar, ertesi sabah 09.00'da biter.
+    nobet_gunu = (simdi_t - dt.timedelta(hours=9)).date().isoformat()
     iller = {kod: [] for kod in ILLER}
     eslesmeyen = {}
     taninmayan = {}  # (alan, biçim) -> kayıt sayısı
@@ -260,7 +265,8 @@ def main():
         saat = {}
         for alan in ("pharmacyDutyStart", "pharmacyDutyEnd"):
             saat[alan] = zaman(r.get(alan))
-            if saat[alan] is None:
+            # Boş saat beklenen durum (yukarıdaki nobet_gunu notu); yalnız gelip de tanınmayan biçim uyarılır.
+            if saat[alan] is None and r.get(alan) not in (None, ""):
                 k = (alan, sekil(r, alan))
                 taninmayan[k] = taninmayan.get(k, 0) + 1
         iller[kod].append({
@@ -297,8 +303,9 @@ def main():
     if onceki_toplam and toplam < onceki_toplam / 2:
         uyarilar.append(f"Toplam kayıt {onceki_toplam} -> {toplam}: yarıdan fazla düştü, il dosyaları değiştirilmedi.")
         os.makedirs(a.cikti, exist_ok=True)
-        yaz(durum_yolu, {"surum": SURUM, "guncelleme": onceki.get("guncelleme"), "sonDeneme": simdi,
-                         "toplam": onceki_toplam, "kaynak": KAYNAK, "iller": il_durum, "uyari": uyarilar})
+        yaz(durum_yolu, {"surum": SURUM, "guncelleme": onceki.get("guncelleme"), "nobetGunu": onceki.get("nobetGunu"),
+                         "sonDeneme": simdi, "toplam": onceki_toplam, "kaynak": KAYNAK, "iller": il_durum,
+                         "uyari": uyarilar})
         print(uyarilar[0])
         sys.exit(2)
 
@@ -312,9 +319,9 @@ def main():
                             (", eski dosya korundu." if os.path.exists(yol) else "."))
             continue
         liste.sort(key=lambda e: (anahtar(e["ilce"]), anahtar(e["ad"])))
-        yaz_bayt(yol, sifrele(gizli, {"il": kod, "ilAdi": ILLER[kod], "guncelleme": simdi,
+        yaz_bayt(yol, sifrele(gizli, {"il": kod, "ilAdi": ILLER[kod], "guncelleme": simdi, "nobetGunu": nobet_gunu,
                                       "kaynak": KAYNAK, "eczaneler": liste}))
-        il_durum[kod] = {"ad": ILLER[kod], "guncelleme": simdi, "sayi": len(liste)}
+        il_durum[kod] = {"ad": ILLER[kod], "guncelleme": simdi, "nobetGunu": nobet_gunu, "sayi": len(liste)}
         yazilan += 1
     for ad, n in eslesmeyen.items():
         uyarilar.append(f"Eşleşmeyen il adı: {ad!r} ({n} kayıt atlandı)")
@@ -323,8 +330,8 @@ def main():
     if taninmayan:  # tanı için yalnız günlüğe: alan adları veri içermez
         print("Sağlayıcının alan adları:", ", ".join(sorted(kayitlar[0].keys())))
 
-    yaz(durum_yolu, {"surum": SURUM, "guncelleme": simdi, "sonDeneme": simdi, "toplam": toplam,
-                     "kaynak": KAYNAK, "iller": il_durum, "uyari": uyarilar})
+    yaz(durum_yolu, {"surum": SURUM, "guncelleme": simdi, "nobetGunu": nobet_gunu, "sonDeneme": simdi,
+                     "toplam": toplam, "kaynak": KAYNAK, "iller": il_durum, "uyari": uyarilar})
     print(f"{toplam} kayıt, {yazilan} il dosyası şifrelenip yazıldı; {len(uyarilar)} uyarı.")
     for u in uyarilar:
         print(" -", u)
