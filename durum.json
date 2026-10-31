@@ -1,0 +1,499 @@
+{
+ "surum": 1,
+ "guncelleme": "2026-10-31T16:36:29+03:00",
+ "nobetGunu": "2026-10-31",
+ "sonDeneme": "2026-10-31T16:36:29+03:00",
+ "toplam": 1353,
+ "kaynak": "İl eczacı odaları (TEB) · veri sağlayıcı: NosyAPI",
+ "iller": {
+  "01": {
+   "ad": "Adana",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 34
+  },
+  "02": {
+   "ad": "Adıyaman",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 9
+  },
+  "03": {
+   "ad": "Afyonkarahisar",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 16
+  },
+  "04": {
+   "ad": "Ağrı",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 8
+  },
+  "05": {
+   "ad": "Amasya",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 7
+  },
+  "06": {
+   "ad": "Ankara",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 47
+  },
+  "07": {
+   "ad": "Antalya",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 36
+  },
+  "08": {
+   "ad": "Artvin",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 9
+  },
+  "09": {
+   "ad": "Aydın",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 35
+  },
+  "10": {
+   "ad": "Balıkesir",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 27
+  },
+  "11": {
+   "ad": "Bilecik",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 6
+  },
+  "12": {
+   "ad": "Bingöl",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 5
+  },
+  "13": {
+   "ad": "Bitlis",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 8
+  },
+  "14": {
+   "ad": "Bolu",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 7
+  },
+  "15": {
+   "ad": "Burdur",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 6
+  },
+  "16": {
+   "ad": "Bursa",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 35
+  },
+  "17": {
+   "ad": "Çanakkale",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 16
+  },
+  "18": {
+   "ad": "Çankırı",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 13
+  },
+  "19": {
+   "ad": "Çorum",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 16
+  },
+  "20": {
+   "ad": "Denizli",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 23
+  },
+  "21": {
+   "ad": "Diyarbakır",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 23
+  },
+  "22": {
+   "ad": "Edirne",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 10
+  },
+  "23": {
+   "ad": "Elazığ",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 8
+  },
+  "24": {
+   "ad": "Erzincan",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 7
+  },
+  "25": {
+   "ad": "Erzurum",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 18
+  },
+  "26": {
+   "ad": "Eskişehir",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 14
+  },
+  "27": {
+   "ad": "Gaziantep",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 21
+  },
+  "28": {
+   "ad": "Giresun",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 18
+  },
+  "29": {
+   "ad": "Gümüşhane",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 6
+  },
+  "30": {
+   "ad": "Hakkari",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 5
+  },
+  "31": {
+   "ad": "Hatay",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 26
+  },
+  "32": {
+   "ad": "Isparta",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 9
+  },
+  "33": {
+   "ad": "Mersin",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 23
+  },
+  "34": {
+   "ad": "İstanbul",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 133
+  },
+  "35": {
+   "ad": "İzmir",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 70
+  },
+  "36": {
+   "ad": "Kars",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 6
+  },
+  "37": {
+   "ad": "Kastamonu",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 22
+  },
+  "38": {
+   "ad": "Kayseri",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 20
+  },
+  "39": {
+   "ad": "Kırklareli",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 11
+  },
+  "40": {
+   "ad": "Kırşehir",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 4
+  },
+  "41": {
+   "ad": "Kocaeli",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 33
+  },
+  "42": {
+   "ad": "Konya",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 36
+  },
+  "43": {
+   "ad": "Kütahya",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 13
+  },
+  "44": {
+   "ad": "Malatya",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 12
+  },
+  "45": {
+   "ad": "Manisa",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 28
+  },
+  "46": {
+   "ad": "Kahramanmaraş",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 16
+  },
+  "47": {
+   "ad": "Mardin",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 11
+  },
+  "48": {
+   "ad": "Muğla",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 36
+  },
+  "49": {
+   "ad": "Muş",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 7
+  },
+  "50": {
+   "ad": "Nevşehir",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 9
+  },
+  "51": {
+   "ad": "Niğde",
+   "guncelleme": "2026-10-31T00:01:49+03:00",
+   "nobetGunu": "2026-10-30",
+   "sayi": 7
+  },
+  "52": {
+   "ad": "Ordu",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 22
+  },
+  "53": {
+   "ad": "Rize",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 11
+  },
+  "54": {
+   "ad": "Sakarya",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 17
+  },
+  "55": {
+   "ad": "Samsun",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 21
+  },
+  "56": {
+   "ad": "Siirt",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 9
+  },
+  "57": {
+   "ad": "Sinop",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 7
+  },
+  "58": {
+   "ad": "Sivas",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 17
+  },
+  "59": {
+   "ad": "Tekirdağ",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 26
+  },
+  "60": {
+   "ad": "Tokat",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 11
+  },
+  "61": {
+   "ad": "Trabzon",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 32
+  },
+  "62": {
+   "ad": "Tunceli",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 3
+  },
+  "63": {
+   "ad": "Şanlıurfa",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 17
+  },
+  "64": {
+   "ad": "Uşak",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 7
+  },
+  "65": {
+   "ad": "Van",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 15
+  },
+  "66": {
+   "ad": "Yozgat",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 14
+  },
+  "67": {
+   "ad": "Zonguldak",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 21
+  },
+  "68": {
+   "ad": "Aksaray",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 10
+  },
+  "69": {
+   "ad": "Bayburt",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 2
+  },
+  "70": {
+   "ad": "Karaman",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 7
+  },
+  "71": {
+   "ad": "Kırıkkale",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 7
+  },
+  "72": {
+   "ad": "Batman",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 8
+  },
+  "73": {
+   "ad": "Şırnak",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 6
+  },
+  "74": {
+   "ad": "Bartın",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 6
+  },
+  "75": {
+   "ad": "Ardahan",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 2
+  },
+  "76": {
+   "ad": "Iğdır",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 3
+  },
+  "77": {
+   "ad": "Yalova",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 6
+  },
+  "78": {
+   "ad": "Karabük",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 7
+  },
+  "79": {
+   "ad": "Kilis",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 2
+  },
+  "80": {
+   "ad": "Osmaniye",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 8
+  },
+  "81": {
+   "ad": "Düzce",
+   "guncelleme": "2026-10-31T16:36:29+03:00",
+   "nobetGunu": "2026-10-31",
+   "sayi": 11
+  }
+ },
+ "uyari": [
+  "51 Niğde: bu çekimde kayıt yok, eski dosya korundu."
+ ]
+}
